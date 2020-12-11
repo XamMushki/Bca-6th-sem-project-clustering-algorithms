@@ -18,8 +18,10 @@ plt.show()
 # fitting Hierarchical clustering to the dataset
 from sklearn.cluster import AgglomerativeClustering, KMeans
 
-hc = AgglomerativeClustering(n_clusters=None,compute_full_tree=True, affinity='euclidean', linkage='ward',
-                             distance_threshold=80000)
+# hc = AgglomerativeClustering(n_clusters=None,compute_full_tree=True, affinity='euclidean', linkage='ward',
+#                              distance_threshold=80000)
+hc = AgglomerativeClustering(affinity='euclidean',
+                             linkage='ward')
 km = KMeans(n_clusters=10, init='k-means++')
 y_km=km.fit_predict(x)
 list_of_labels_kmeans=list(y_km)
